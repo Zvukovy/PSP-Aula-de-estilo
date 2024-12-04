@@ -1,144 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aula de Estilo</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-</head>
-<body>
-    <header>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
         <div class="logo">
-            <h1>Aula de Estilo</h1>
+          <h1>Aula de Estilo</h1>
         </div>
         <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="#productos" class="dropdown-btn">Productos</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#camibusos">Camibusos</a></li>
-                        <li><a href="#sudaderas">Sudaderas</a></li>
-                        <li><a href="#chaquetas">Chaquetas</a></li>
-                    </ul>
-                </li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#carrito">Carrito</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li class="dropdown">
+              <a href="#productos" class="dropdown-btn">Productos</a>
+              <ul class="dropdown-menu">
+                <li><a href="#camibusos">Camibusos</a></li>
+                <li><a href="#sudaderas">Sudaderas</a></li>
+                <li><a href="#chaquetas">Chaquetas</a></li>
+                <li><a href="#pantalones">Pantalones</a></li>
+                <li><a href="#chalecos">Chalecos</a></li>
+              </ul>
+            </li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li class="cart" id="cartButton">
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="icon icon-tabler icons-tabler-filled icon-tabler-shopping-cart"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M6 2a1 1 0 0 1 .993 .883l.007 .117v1.068l13.071 .935a1 1 0 0 1 .929 1.024l-.01 .114l-1 7a1 1 0 0 1 -.877 .853l-.113 .006h-12v2h10a3 3 0 1 1 -2.995 3.176l-.005 -.176l.005 -.176c.017 -.288 .074 -.564 .166 -.824h-5.342a3 3 0 1 1 -5.824 1.176l-.005 -.176l.005 -.176a3.002 3.002 0 0 1 1.995 -2.654v-12.17h-1a1 1 0 0 1 -.993 -.883l-.007 -.117a1 1 0 0 1 .883 -.993l.117 -.007h2zm0 16a1 1 0 1 0 0 2a1 1 0 0 0 0 -2zm11 0a1 1 0 1 0 0 2a1 1 0 0 0 0 -2z"
+                  />
+                </svg>
+              </a>
 
-    <section id="inicio" class="hero">
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <h2>Carrito de Compras</h2>
+                  <section id="carrito">
+                    <ul id="carrito-lista">
+                      <!-- Los productos añadidos aparecerán aquí -->
+                    </ul>
+                    <p>Total: <span id="total">0</span> COP</p>
+                    <button id="vaciar-carrito">Vaciar Carrito</button>
+                  </section>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="inicio" class="hero">
         <h2>Uniformes escolares personalizados</h2>
         <p>Calidad y estilo para todas las instituciones educativas</p>
-    </section>
+      </section>
 
-    <section id="productos">
+      <section id="productos">
         <h2>Catálogo de Productos</h2>
         <div class="productos">
-            <div class="producto">
-                <img src="camibusos.jpg" alt="Camibusos">
-                <h3>Camibusos</h3>
-                <button class="add-to-cart" data-producto="Camibusos" data-precio="20000">Añadir al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="sudaderas.jpg" alt="Sudaderas">
-                <h3>Sudaderas</h3>
-                <button class="add-to-cart" data-producto="Sudaderas" data-precio="35000">Añadir al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="chaquetas.jpg" alt="Chaquetas">
-                <h3>Chaquetas</h3>
-                <button class="add-to-cart" data-producto="Chaquetas" data-precio="45000">Añadir al carrito</button>
-            </div>
+          <div class="producto">
+            <span>Oferta 20%</span>
+            <img
+              class="producto__img"
+              src="./images/camibusos.png"
+              alt="Camibusos"
+            />
+            <h3 class="producto__title">Camibusos</h3>
+            <button
+              class="add-to-cart"
+              data-producto="Camibusos"
+              data-precio="20000"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+          <div class="producto">
+            <img
+              class="producto__img"
+              src="./images/sudaderas.png"
+              alt="Sudaderas"
+            />
+            <h3 class="producto__title">Sudaderas</h3>
+            <button
+              class="add-to-cart"
+              data-producto="Sudaderas"
+              data-precio="35000"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+          <div class="producto">
+            <span>Oferta 10%</span>
+            <img
+              class="producto__img"
+              src="./images/chaquetas.png"
+              alt="Chaquetas"
+            />
+            <h3 class="producto__title">Chaquetas</h3>
+            <button
+              class="add-to-cart"
+              data-producto="Chaquetas"
+              data-precio="45000"
+            >
+              Añadir al carrito
+            </button>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section id="nosotros">
+      <section id="nosotros">
         <h2>Acerca de Nosotros</h2>
-        <p>Somos una empresa con más de 10 años de experiencia en la confección de uniformes escolares, brindando calidad y compromiso a nuestros clientes.</p>
-        <h3>Misión</h3>
-        <p>Ofrecer uniformes escolares de alta calidad, destacándonos por el diseño y compromiso con nuestros clientes.</p>
-        <h3>Visión</h3>
-        <p>Convertirnos en la empresa líder en la confección de uniformes escolares en la región, utilizando tecnología y diseño innovador.</p>
-    </section>
-
-    <section id="opiniones">
-        <h2>Opiniones de Nuestros Clientes</h2>
-        <div class="opiniones-diagrama">
-            <div class="opinion">
-                <p>“Excelente calidad en los uniformes. Mis hijos están encantados.”</p>
-                <span>- María G.</span>
-            </div>
-            <div class="opinion">
-                <p>“Entrega rápida y atención al cliente muy buena. 100% recomendado.”</p>
-                <span>- Carlos H.</span>
-            </div>
-            <div class="opinion">
-                <p>“Gran variedad de productos y diseños. Volveré a comprar.”</p>
-                <span>- Sofía R.</span>
-            </div>
+        <p>
+          Somos una empresa con más de 10 años de experiencia en la confección
+          de uniformes escolares, brindando calidad y compromiso a nuestros
+          clientes.
+        </p>
+        <div class="container__nosotros">
+          <div class="box">
+            <h3>Misión</h3>
+            <p>
+              Ofrecer uniformes escolares de alta calidad, destacándonos por el
+              diseño y compromiso con nuestros clientes.
+            </p>
+            <h3>Visión</h3>
+            <p>
+              Convertirnos en la empresa líder en la confección de uniformes
+              escolares en la región, utilizando tecnología y diseño innovador.
+            </p>
+          </div>
+          <img src="./images/nosotros.svg" alt="" class="nosotros__img" />
         </div>
-    </section>
-    <section id="opinion-estrellas">
-        <h2>Distribución de Opiniones</h2>
-        <div class="grafico-barras">
-            <div class="barra" data-rating="5">
-                <span class="etiqueta">★★★★★</span>
-                <div class="relleno" style="width: 0%;" data-valor="35"></div>
-            </div>
-            <div class="barra" data-rating="4">
-                <span class="etiqueta">★★★★☆</span>
-                <div class="relleno" style="width: 0%;" data-valor="25"></div>
-            </div>
-            <div class="barra" data-rating="3">
-                <span class="etiqueta">★★★☆☆</span>
-                <div class="relleno" style="width: 0%;" data-valor="20"></div>
-            </div>
-            <div class="barra" data-rating="2">
-                <span class="etiqueta">★★☆☆☆</span>
-                <div class="relleno" style="width: 0%;" data-valor="15"></div>
-            </div>
-            <div class="barra" data-rating="1">
-                <span class="etiqueta">★☆☆☆☆</span>
-                <div class="relleno" style="width: 0%;" data-valor="5"></div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="carrito">
-        <h2>Tu Carrito</h2>
-        <ol id="carrito-lista">
-            <!-- Los productos añadidos aparecerán aquí como una lista ordenada -->
-        </ol>
-        <p>Total: <span id="total">0</span> COP</p>
-        <button id="vaciar-carrito">Vaciar Carrito</button>
-    </section>
-    
+      </section>
 
-    <section id="contacto">
+      <section id="contacto">
         <h2>Contáctanos</h2>
         <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            placeholder="Juan"
+          />
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Perez"
+            required
+          />
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <label for="mensaje">Mensaje:</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required
+            placeholder="Escriba su mensaje"
+          ></textarea>
 
-            <button type="submit">Enviar</button>
+          <button class="button" type="submit">Enviar</button>
         </form>
-    </section>
+
+        <div id="errorMessages" style="color: red; margin-top: 10px;"></div>
+      </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Aula de Estilo. Todos los derechos reservados.</p>
+      <p>&copy; 2024 Aula de Estilo. Todos los derechos reservados.</p>
     </footer>
-    
-</body>
-
+  </body>
 </html>
