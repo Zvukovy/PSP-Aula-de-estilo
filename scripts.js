@@ -26,18 +26,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
         carrito.forEach((item, index) => {
             total += item.precio;
+
             const li = document.createElement("li");
             li.textContent = `${item.producto} - ${item.precio} COP`;
+
             const eliminarBtn = document.createElement("button");
             eliminarBtn.textContent = "Eliminar";
             eliminarBtn.addEventListener("click", () => {
                 carrito.splice(index, 1);
                 actualizarCarrito();
             });
+
             li.appendChild(eliminarBtn);
             carritoLista.appendChild(li);
         });
 
         totalSpan.textContent = total.toFixed(2);
     }
+});
+// scripts.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    const barras = document.querySelectorAll(".grafico-barras .barra .relleno");
+
+    barras.forEach((barra) => {
+        const valor = barra.getAttribute("data-valor");
+        barra.style.width = `${valor}%`;
+    });
 });
